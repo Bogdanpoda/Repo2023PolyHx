@@ -10,14 +10,19 @@ class Education:
 
 
 class Job:
-    def __init__(self, field: str, companyName: str, jobTitle: str, jobDescription: str, salary: int, city: str):
+    def __init__(self, field: str, company: str, jobTitle: str, jobDescription: str, salary: int, location: str):
         self.field = field
-        self.companyName = companyName
+        self.company = company
         self.jobTitle = jobTitle
         self.jobDescription = jobDescription
         self.salary = salary
-        self.city = city
-        self.gpa_requirement = None
+        self.location = location
+        #self.city = city
+        #self.state = state
+        #self.country = country
+    def to_dict(self):
+      return {"field": self.field, "company": self.company, "title":self.jobTitle,"description":self.jobDescription,"location":self.location}
+
 
 class WorkExperience:
     def __init__(self, job: Job, startYear: int, endYear: int):

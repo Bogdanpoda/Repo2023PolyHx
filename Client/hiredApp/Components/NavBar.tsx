@@ -7,6 +7,7 @@ import Suggestion from '../Pages/Suggestion';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import UserProfile from '../Pages/UserProfile';
 
+
 const Tab = createBottomTabNavigator();
 
 

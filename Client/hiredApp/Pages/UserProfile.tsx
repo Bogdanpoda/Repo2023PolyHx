@@ -6,7 +6,7 @@ interface Props {
 
 }
 
-export default function LoginPage(props: Props) {
+export default function UserProfile(props: Props) {
 
     const [isNameEditable, setIsNameEditable] = useState(false);
     const [name, setName] = useState('');
