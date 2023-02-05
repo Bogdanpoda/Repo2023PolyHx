@@ -5,6 +5,7 @@ import HomePage from '../Pages/Home';
 import CompanyProfile from '../Pages/CompanyProfile';
 import Suggestion from '../Pages/Suggestion';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import UserProfile from '../Pages/UserProfile';
 
 const Tab = createBottomTabNavigator();
 
@@ -57,8 +58,7 @@ export default function NavBar({route}:{route:any}){
           
             <Tab.Screen name="HomeScreen" component={HomeScreen} options={{headerShown:false}} />
             <Tab.Screen name="Messages" component={ProfileScreen} options={{headerShown:false}}/>
-            <Tab.Screen name="Inbox" component={SuggestionScreen} options={{headerShown:false}}/>
-            
+            <Tab.Screen name="Inbox" component={UserProfile} options={{headerShown:false}}/>
           </Tab.Navigator>
     )
 }
