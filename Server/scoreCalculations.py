@@ -8,7 +8,8 @@ def helloworld():
 
 def calculateUserMatchScore(user: User, job: Job):
     user_match_score = calculateUserWorkExperienceScore(user, job) + calculateUserEducationScore(user, job) \
-                       + calculateUserLocationScore(user, job)
+                       + calculateUserLocationScore(user, job) + calculateUserSalaryScore(user, job) \
+                       + calculateUserGPAScore(user, job)
     return user_match_score
 
 
@@ -45,7 +46,15 @@ def calculateUserLocationScore(user: User, job: Job):
         return 0
 
 
-def calculateEmployerMatchScore(employer: Employer, user: User):
-    score = 0
-    pass
+def calculateUserGPAScore(user: User, job: Job):
+    if user.education.GPA >= job.gpa_requirement:
+        return (user.education.GPA - job.gpa_requirement) * 0.2
+    else:
+        return 0
 
+
+def calculateUserSalaryScore(user: User, job: Job):
+    if user.workExperience[0].job.salary >= job.salary:
+        return (job.salary - user.workExperience[0].job.salary) * 0.2 / 1000
+    else:
+        return 0

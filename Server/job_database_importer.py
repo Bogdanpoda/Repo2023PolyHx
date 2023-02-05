@@ -10,7 +10,7 @@ def import_jobs():
     jobs_dictionnary = {}
 
     for index, row in df.iterrows():
-        jobs_dictionnary[index] = Job(row["field"], row["company"], row["title"], row["description"],
-                                      random.randrange(50000, 120000, 1000), row["location"])
+        jobs_dictionnary[index] = Job(row["field"], row["company"], row["title"], row["description"], row["salary"], row["location"])
+        jobs_dictionnary[index].gpa_requirement = row["gpa_req"]
 
     return jobs_dictionnary
