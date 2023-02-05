@@ -6,7 +6,7 @@ interface Props {
 
 }
 
-export default function LoginPage(props: Props) {
+export default function UserProfile(props: Props) {
 
     const [isNameEditable, setIsNameEditable] = useState(false);
     const [name, setName] = useState('');
@@ -39,12 +39,12 @@ export default function LoginPage(props: Props) {
                         value={name}
                         editable = {isNameEditable}
                     />
-                    <Pressable
+                     <Pressable
                         style={styles.edit_button}
                         onPress={() => setIsNameEditable(!isNameEditable)}
                     >
                         <Text style={styles.infoText}>EDIT</Text>
-                    </Pressable>
+                    </Pressable> 
                 </View>
                 <Text>
                     Email
@@ -57,12 +57,12 @@ export default function LoginPage(props: Props) {
                         value={name}
                         editable = {isNameEditable}
                     />
-                    <Pressable
+                     <Pressable
                         style={styles.edit_button}
                         onPress={() => setIsNameEditable(!isNameEditable)}
                     >
                         <Text style={styles.infoText}>EDIT</Text>
-                    </Pressable>
+                    </Pressable> 
                 </View>
                 <Text>
                     Degree
@@ -75,7 +75,7 @@ export default function LoginPage(props: Props) {
                         value={name}
                         editable = {isNameEditable}
                     />
-                    <Pressable
+                     <Pressable
                         style={styles.edit_button}
                         onPress={() => setIsNameEditable(!isNameEditable)}
                     >
@@ -94,12 +94,12 @@ export default function LoginPage(props: Props) {
                             editable = {isNameEditable}
                         />
                     </ScrollView>
-                    <Pressable
+                     <Pressable
                         style={styles.edit_button}
                         onPress={() => setIsNameEditable(!isNameEditable)}
                     >
                         <Text style={styles.infoText}>EDIT</Text>
-                    </Pressable>
+                    </Pressable> 
                 </View>
                 
             </View>

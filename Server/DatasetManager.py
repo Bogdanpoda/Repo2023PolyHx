@@ -67,6 +67,42 @@ def parseData():
 
     dw.to_csv('jobs.csv', encoding='utf-8', index=True)
 
+def filterJob(filter):
+
+    jobList=[]
+    datajob = pd.read_csv('jobs.csv')
+
+    if(filter!="all"):
+    
+        for row in datajob.iterrows():
+            #print(row[1][3])
+            if row[1][3]== filter:
+                title = row[1][1]
+                company = row[1][2]
+                field=row[1][3]
+                location = row[1][4]
+                desc = row[1][5]
+                jobList.append(Job(field,company,title,desc,60000,location))
+    else:
+        index =0
+        for row in datajob.iterrows():
+            if index == 15:
+                break
+            title = row[1][1]
+            company = row[1][2]
+            field=row[1][3]
+            location = row[1][4]
+            desc = row[1][5]
+            jobList.append(Job(field,company,title,desc,60000,location))
+            index+=1
+    
+    return jobList
+
+
+
+
+
+
 
 
 
@@ -103,7 +139,7 @@ def parseData():
 
 
     
-    print(len(df["title"]))
+    
 
 
 
