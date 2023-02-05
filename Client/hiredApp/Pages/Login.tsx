@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
-import {View, TextInput, Button, Text, StyleSheet} from 'react-native';
+import {View, TextInput, Button, Text, StyleSheet, Pressable} from 'react-native';
+
+
 
 export default function LoginPage({ navigation }: { navigation: any }) {
   const [email, setEmail] = useState('');
@@ -12,8 +14,10 @@ export default function LoginPage({ navigation }: { navigation: any }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Login</Text>
-      <View style={styles.formContainer}>
+     <Text style={styles.title}>
+      HIRED  OR  FIRED </Text>
+      <View style={[styles.formContainer, styles.elevation]}>
+      <Text style={styles.title}>LOGIN</Text>
         <TextInput
           style={styles.input}
           placeholder="Email"
@@ -27,9 +31,12 @@ export default function LoginPage({ navigation }: { navigation: any }) {
           value={password}
           secureTextEntry={true}
         />
-        <Button title="Login" onPress={handleSubmit} />
+        <Pressable onPress={handleSubmit} style={styles.loginBut}>
+          <Text style = {styles.loginTxt}>LOGIN</Text>
+        </Pressable>
       </View>
-    </View>
+      </View>
+    
   );
 };
 
@@ -38,17 +45,66 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: "white",
+   position:'relative',
+   bottom:20,
   },
+
+  
+
   title: {
     fontSize: 24,
-    marginBottom: 16,
+    paddingBottom:40,
+    textAlign: 'center',
+    fontFamily: 'sans-serif',
+    fontWeight:'bold',
+    fontVariant:['small-caps'],
   },
+
   formContainer: {
-    width: '80%',
+    width: '90%',        
+    paddingTop: 10,
+    paddingBottom: 270,
+    padding: 10,
+    borderRadius: 45, 
+    backgroundColor: 'white',
+    alignItems:'center',
+    justifyContent:'center', 
+    position:'relative',
+    top:100,
+    bottom:10,
+    
   },
+
+  elevation: {  
+    shadowColor: 'black',      
+    elevation: 10,  
+  }, 
+  
+  loginBut: {
+    backgroundColor: '#FF871C',
+    padding: 10,
+    paddingLeft: 80,
+    paddingRight: 80,
+    borderRadius:35,
+    position:'relative',
+    
+    bottom:10,
+  },
+
+  loginTxt: {
+    textAlign:"center",
+    color: 'white',
+    padding: 5,
+    fontWeight: 'bold',
+    textDecorationColor: 'white',
+    fontVariant:['small-caps'],
+  },
+
   input: {
     borderWidth: 1,
-    borderColor: '#ccc',
+    borderColor: 'grey',
+    borderRadius: 10,
     padding: 8,
     marginBottom: 16,
     width: '100%'
