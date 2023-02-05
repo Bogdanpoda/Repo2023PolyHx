@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         marginLeft: '20%',
-        marginRight: '30%%',
+        marginRight: '30%',
         height: '10%',
     },
     input_container: {

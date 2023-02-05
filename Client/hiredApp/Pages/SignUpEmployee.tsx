@@ -93,7 +93,7 @@ export default function SignUp() {
  
   
     return (
-      
+      <ScrollView style={{width:'100%'}}>
 
       <View style={styles.container}>
         
@@ -319,6 +319,7 @@ dropDownDirection="TOP"
           </Pressable>
           
         </View>
+        </ScrollView>
         
         
       

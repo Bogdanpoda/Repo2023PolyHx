@@ -13,6 +13,12 @@ export default function LoginPage({ navigation }: { navigation: any }) {
 
   }
 
+  const handleRegister = () => {
+    // Handle login form submit
+    navigation.navigate('SignUp')
+
+  }
+
   return (
     
     <View style={styles.container}>
@@ -37,10 +43,10 @@ export default function LoginPage({ navigation }: { navigation: any }) {
       <Pressable onPress={handleSubmit} style={styles.loginBut}>
           <Text style = {styles.loginTxt}>LOGIN</Text>
         </Pressable>
-        <Pressable onPress={handleSubmit} style={styles.loginBut}>
+        <Pressable onPress={handleRegister} style={styles.loginBut}>
           <Text style = {styles.loginTxt}>REGISTER EMPLOYEE</Text>
         </Pressable>
-        <Pressable onPress={handleSubmit} style={styles.loginBut}>
+        <Pressable onPress={handleRegister} style={styles.loginBut}>
           <Text style = {styles.loginTxt}>REGISTER COMPANY</Text>
         </Pressable>
       </View>

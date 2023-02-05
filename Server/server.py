@@ -66,6 +66,6 @@ def get_job(filter):
 
 
 if __name__ == "__main__":
-    parseData()
-    #app.run(debug=True)
+    #parseData()
+    app.run(debug=True)
     
