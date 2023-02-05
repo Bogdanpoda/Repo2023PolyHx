@@ -142,12 +142,7 @@ export default function SignUp() {
             onChangeText={text => setCity(text)}
             value={city}            
           />
-          <TextInput
-            style={styles.input}
-            placeholder="Field of Work (Optional)"
-            onChangeText={text => setField(text)}
-            value={field}            
-          />
+          
           <TextInput
             style={styles.input}
             placeholder="Job Experience 1"
@@ -156,7 +151,7 @@ export default function SignUp() {
                 
           />
           <DropDownPicker
-          placeholder='Select a Field'
+          placeholder='Select a Field of Work'
           dropDownDirection="TOP"
         open={open1}
         value={value1}
@@ -194,7 +189,7 @@ export default function SignUp() {
           />
 
 <DropDownPicker
-placeholder='Select a Field'
+placeholder='Select a Field of Work'
 dropDownDirection="TOP"
         open={open2}
         value={value2}
@@ -231,7 +226,7 @@ dropDownDirection="TOP"
                 
           />
           <DropDownPicker
-          placeholder='Select a Field'
+          placeholder='Select a Field of Work'
           dropDownDirection="TOP"
         open={open3}
         value={value3}
