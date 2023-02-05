@@ -17,7 +17,7 @@ def calculateFieldMatchScore(experience, job: Job):
 
     if experience.field == "Agriculture":
         field_match_score += AgricultureComparisionDict[job.field]
-    elif experience.job.field == "Architecture":
+    elif experience.field == "Architecture":
         field_match_score += ArchitectureComparisionDict[job.field]
     elif experience.field == "Arts":
         field_match_score += ArtsComparisionDict[job.field]
@@ -29,7 +29,7 @@ def calculateFieldMatchScore(experience, job: Job):
         field_match_score += SoftwareEngineeringComparisionDict[job.field]
     elif experience.field == "MecanicalEngineering":
         field_match_score += MecanicalEngineeringComparisionDict[job.field]
-    elif experience.job.field == "Finance":
+    elif experience.field == "Finance":
         field_match_score += FinanceComparisionDict[job.field]
     elif experience.field == "Hospitality":
         field_match_score += HospitalityComparisionDict[job.field]
@@ -47,12 +47,13 @@ def calculateFieldMatchScore(experience, job: Job):
 def calculateUserWorkExperienceScore(user: User, job: Job):
     work_experience_score = 0
     for experience in user.workExperience:
-        work_experience_score += user.workExperience.duration * (calculateFieldMatchScore(experience, job) * 5)
+        print(experience.job.field)
+        work_experience_score += experience.duration * (calculateFieldMatchScore(experience.job, job) * 5)
     return work_experience_score
 
 
 def calculateUserEducationScore(user: User, job: Job):
-    education_score = calculateFieldMatchScore(user.education.field, job) * user.education.GPA * 5
+    education_score = calculateFieldMatchScore(user.education, job) * user.education.GPA * 5
     return education_score
 
 

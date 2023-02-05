@@ -37,7 +37,7 @@ class WorkExperience:
 
 
 class ContactInfo:
-    def __init__(self, email: str, phoneNumber: str, address: str, zipCode: int, city: str, state: str, country: str):
+    def __init__(self, email: str, phoneNumber: str, address: str, zipCode: str, city: str, state: str, country: str):
         self.email = email
         self.phoneNumber = phoneNumber
         self.address = address

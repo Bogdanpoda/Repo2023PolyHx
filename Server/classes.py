@@ -10,7 +10,6 @@ class User:
         self.lastName = None
         self.ContactInfo = None
         self.education = None
-        self.currentJob = None
         self.workExperience = []
         self.skills = []
 
@@ -25,9 +24,6 @@ class User:
 
     def setEducation(self, education: Education):
         self.education = education
-
-    def setCurrentJob(self, currentJob: Job):
-        self.currentJob = currentJob
 
     def addWorkExperience(self, workExperience: WorkExperience):
         self.workExperience.append(workExperience)
