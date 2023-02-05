@@ -97,7 +97,7 @@ export default function HomePage() {
       ind += 1;
     }
 
-    console.log(desc.length);
+    
     setField(desc[desc.length - 1].field);
     setTitle(desc[desc.length - 1].title);
   }

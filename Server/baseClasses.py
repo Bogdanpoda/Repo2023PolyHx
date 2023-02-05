@@ -10,7 +10,7 @@ class Education:
 
 
 class Job:
-    def __init__(self, field: str, companyName: str, jobTitle: str, jobDescription: str, salary: int, city: str):
+    def __init__(self, field: str, company: str, jobTitle: str, jobDescription: str, salary: int, location: str):
         self.field = field
         self.company = company
         self.jobTitle = jobTitle
