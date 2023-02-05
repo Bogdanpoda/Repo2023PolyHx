@@ -1,0 +1,12 @@
+home = C:\Users\bogda\anaconda3
+include-system-site-packages = false
+version = 3.9.7
+
+
+Yasser config:
+
+home = C:\Users\yasse\AppData\Local\Programs\Python\Python311
+include-system-site-packages = false
+version = 3.11.1
+executable = C:\Users\yasse\AppData\Local\Programs\Python\Python311\python.exe
+command = C:\Users\yasse\AppData\Local\Programs\Python\Python311\python.exe -m venv C:\Users\yasse\OneDrive\Documents\GitHub\Repe2023Hack\server\venv
