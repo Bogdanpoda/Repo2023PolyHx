@@ -1,58 +1,35 @@
-
 from classes import *
 from fieldMatchingFactors import *
+
 
 def helloworld():
     print("hello world")
 
 
-
-
-
-
-
 def calculateUserMatchScore(user: User, job: Job):
     user_match_score = calculateUserWorkExperienceScore(user, job) + calculateUserEducationScore(user, job) \
-        + calculateUserLocationScore(user, job)
+                       + calculateUserLocationScore(user, job) + calculateUserSalaryScore(user, job) \
+                       + calculateUserGPAScore(user, job)
     return user_match_score
 
 
 def calculateFieldMatchScore(experience, job: Job):
     field_match_score = 0
 
-    if experience.field == "Agriculture":
-        field_match_score += AgricultureComparisionDict[job.field]
-    elif experience.field == "Architecture":
-        field_match_score += ArchitectureComparisionDict[job.field]
-    elif experience.field == "Arts":
-        field_match_score += ArtsComparisionDict[job.field]
-    elif experience.field == "Biology":
-        field_match_score += BiologyComparisionDict[job.field]
+    if experience.field == "general":
+        field_match_score += generalComparisionDict[job.field]
+    elif experience.field == "finance":
+        field_match_score += financeComparisionDict[job.field]
+    elif experience.field == "software":
+        field_match_score += softwareComparisionDict[job.field]
     elif experience.field == "Education":
         field_match_score += EducationComparisionDict[job.field]
-    elif experience.field == "SoftwareEngineering":
-        field_match_score += SoftwareEngineeringComparisionDict[job.field]
-    elif experience.field == "MecanicalEngineering":
-        field_match_score += MecanicalEngineeringComparisionDict[job.field]
-    elif experience.field == "Finance":
-        field_match_score += FinanceComparisionDict[job.field]
-    elif experience.field == "Hospitality":
-        field_match_score += HospitalityComparisionDict[job.field]
-    elif experience.field == "Mathematics":
-        field_match_score += MathematicsComparisionDict[job.field]
-    elif experience.field == "Medicine":
-        field_match_score += MedicineComparisionDict[job.field]
-    elif experience.field == "Music":
-        field_match_score += MusicComparisionDict[job.field]
-    elif experience.field == "Logistics":
-        field_match_score += LogisticsComparisionDict[job.field]
     return field_match_score
 
 
 def calculateUserWorkExperienceScore(user: User, job: Job):
     work_experience_score = 0
     for experience in user.workExperience:
-        print(experience.job.field)
         work_experience_score += experience.duration * (calculateFieldMatchScore(experience.job, job) * 5)
     return work_experience_score
 
@@ -64,15 +41,20 @@ def calculateUserEducationScore(user: User, job: Job):
 
 def calculateUserLocationScore(user: User, job: Job):
     if user.ContactInfo.city == job.city:
-        return 10
-    elif user.ContactInfo.state == job.state:
-        return 5
-    elif user.ContactInfo.country == job.country:
-        return 2
+        return 30
     else:
         return 0
 
 
-def calculateEmployerMatchScore(employer: Employer, user: User):
-    score = 0
-    return score
+def calculateUserGPAScore(user: User, job: Job):
+    if user.education.GPA >= job.gpa_requirement:
+        return (user.education.GPA - job.gpa_requirement) * 0.2
+    else:
+        return 0
+
+
+def calculateUserSalaryScore(user: User, job: Job):
+    if user.workExperience[0].job.salary >= job.salary:
+        return (job.salary - user.workExperience[0].job.salary) * 0.2 / 1000
+    else:
+        return 0

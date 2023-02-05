@@ -10,7 +10,7 @@ class Education:
 
 
 class Job:
-    def __init__(self, field: str, company: str, jobTitle: str, jobDescription: str, salary: int, location: str):
+    def __init__(self, field: str, companyName: str, jobTitle: str, jobDescription: str, salary: int, city: str):
         self.field = field
         self.company = company
         self.jobTitle = jobTitle
@@ -33,11 +33,9 @@ class WorkExperience:
 
 
 class ContactInfo:
-    def __init__(self, email: str, phoneNumber: str, address: str, zipCode: str, city: str, state: str, country: str):
+    def __init__(self, email: str, phoneNumber: str, address: str, zipCode: str, city: str):
         self.email = email
         self.phoneNumber = phoneNumber
         self.address = address
         self.zipCode = zipCode
         self.city = city
-        self.state = state
-        self.Country = country
