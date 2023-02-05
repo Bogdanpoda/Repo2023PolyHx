@@ -1,6 +1,7 @@
 import TinderCard from 'react-tinder-card'
 import {View, TextInput, Button, Text, StyleSheet, ImageBackground} from 'react-native';
 import { useState } from 'react';
+import NavBar from '../Components/NavBar';
 
 
 const db = [
@@ -48,6 +49,8 @@ const characters = db
       {lastDirection ? <Text style={styles.infoText}>You swiped {lastDirection}</Text> : <Text style={styles.infoText} />}
 
       <Text> About Us: </Text>
+      
+
       
     </View>
   )

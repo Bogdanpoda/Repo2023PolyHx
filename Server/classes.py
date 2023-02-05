@@ -9,7 +9,6 @@ class User:
         self.lastName = None
         self.ContactInfo = None
         self.education = None
-        self.currentJob = None
         self.workExperience = []
         self.skills = []
 
@@ -25,9 +24,6 @@ class User:
     def setEducation(self, education: Education):
         self.education = education
 
-    def setCurrentJob(self, currentJob: Job):
-        self.currentJob = currentJob
-
     def addWorkExperience(self, workExperience: WorkExperience):
         self.workExperience.append(workExperience)
 
@@ -39,11 +35,11 @@ class Employer:
     def __init__(self, email: str, password: str):
         self.email = email
         self.password = password
-        self.company = None
+        self.companyName = None
         self.jobPostings = []
 
-    def setCompany(self, company: Company):
-        self.company = company
+    def setCompanyName(self, companyName: str):
+        self.companyName = companyName
 
     def addJobPosting(self, jobPosting: Job):
         self.jobPostings.append(jobPosting)
