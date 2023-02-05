@@ -17,7 +17,7 @@ class Job:
         self.jobDescription = jobDescription
         self.salary = salary
         self.city = city
-
+        self.gpa_requirement = None
 
 class WorkExperience:
     def __init__(self, job: Job, startYear: int, endYear: int):
