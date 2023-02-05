@@ -9,17 +9,11 @@ class Education:
         self.duration = graduationYear - startYear
 
 
-class Company:
-    def __init__(self, name: str, location: str, description: str):
-        self.name = name
-        self.location = location
-        self.description = description
-
-
 class Job:
-    def __init__(self, field: str, company: Company, jobTitle: str, jobDescription: str, salary: int, city: str, state: str, country: str):
+    def __init__(self, field: str, companyName: str, jobTitle: str, jobDescription: str, salary: int, city: str,
+                 state: str, country: str):
         self.field = field
-        self.company = company
+        self.companyName = companyName
         self.jobTitle = jobTitle
         self.jobDescription = jobDescription
         self.salary = salary

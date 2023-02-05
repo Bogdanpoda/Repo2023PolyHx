@@ -36,11 +36,11 @@ class Employer:
     def __init__(self, email: str, password: str):
         self.email = email
         self.password = password
-        self.company = None
+        self.companyName = None
         self.jobPostings = []
 
-    def setCompany(self, company: Company):
-        self.company = company
+    def setCompanyName(self, companyName: str):
+        self.companyName = companyName
 
     def addJobPosting(self, jobPosting: Job):
         self.jobPostings.append(jobPosting)
