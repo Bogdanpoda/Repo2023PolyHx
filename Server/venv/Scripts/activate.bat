@@ -8,8 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\yasse\OneDrive\Documents\GitHub\Repe2023Hack\server\venv
-
+set VIRTUAL_ENV=C:\Users\bogda\Repos\Repe2023Hack\Server\venv\Scripts\pip.exe
 if not defined PROMPT set PROMPT=$P$G
 
 if defined _OLD_VIRTUAL_PROMPT set PROMPT=%_OLD_VIRTUAL_PROMPT%

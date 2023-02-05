@@ -1,7 +1,8 @@
-from flask import Flask
+from flask import Flask,jsonify
 #import firebase_admin
 #from firebase_admin import credentials, db
 from scoreCalculations import helloworld
+from DatasetManager import parseData 
 
 
 app = Flask(__name__)
@@ -20,6 +21,28 @@ def test():
 
     return {"Test": "test"}
 
+@app.route("/job/<filter>", methods=["GET"])
+def get_job(filter):
+    if filter =="software":
+        job = {
+            "id": "123",
+            "title": "Software Engineer",
+            "description": "Develop software solutions to meet customer requirements.",
+            "location": "San Francisco, CA",
+            "salary": 120000
+        }
+        return jsonify(job)
+    else:
+        job = {
+            "id": "345",
+            "title": "Bitchass",
+            "description": "Develop software solutions to meet customer requirements.",
+            "location": "San Francisco, CA",
+            "salary": 120000
+        }
+        return jsonify(job)
+
+
 
 
 
@@ -28,4 +51,6 @@ def test():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    parseData()
+    #app.run(debug=True)
+    

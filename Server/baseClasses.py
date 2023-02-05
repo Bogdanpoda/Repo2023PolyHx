@@ -16,7 +16,7 @@ class Company:
 
 
 class Job:
-    def __init__(self, field: str, company: Company, jobTitle: str, jobDescription: str, salary: int, location: str):
+    def __init__(self, field: str, company: str, jobTitle: str, jobDescription: str, salary: int, location: str):
         self.field = field
         self.company = company
         self.jobTitle = jobTitle
