@@ -1,12 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import LoginPage from './Pages/Login';
 import HomePage from './Pages/Home';
-import SignUp from './Pages/SignUp';
+import SignUp from './Pages/SignUpEmployee';
 
 export default function App() {
   return (
-    <LoginPage></LoginPage>
+    <ScrollView style={{width:'100%'}}>
+    <SignUp></SignUp>
+    </ScrollView>
   );
 }
 
