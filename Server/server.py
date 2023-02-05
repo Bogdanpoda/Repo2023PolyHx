@@ -1,8 +1,9 @@
-from flask import Flask,jsonify
+from flask import Flask,jsonify,request
 #import firebase_admin
 #from firebase_admin import credentials, db
 from scoreCalculations import helloworld
-from DatasetManager import parseData 
+from DatasetManager import parseData, filterJob 
+import json
 
 
 app = Flask(__name__)
@@ -26,36 +27,29 @@ def returnJobs():
     for i in range(len(number_to_send)):
         jobs.append()
 
-@app.route("/signup", method = ['POST'])
-def signUp():
-    email, password = request.headers.get('email'), request.headers.get('password')
-    #Put those info into a database and create a new userID
+# @app.route("/signup", method = ['POST'])
+# def signUp():
+#     email, password = request.headers.get('email'), request.headers.get('password')
+#     #Put those info into a database and create a new userID
     
     
     
     
     
 
-@app.route("/job/<filter>", methods=["GET"])
-def get_job(filter):
-    if filter =="software":
-        job = {
-            "id": "123",
-            "title": "Software Engineer",
-            "description": "Develop software solutions to meet customer requirements.",
-            "location": "San Francisco, CA",
-            "salary": 120000
-        }
-        return jsonify(job)
-    else:
-        job = {
-            "id": "345",
-            "title": "Bitchass",
-            "description": "Develop software solutions to meet customer requirements.",
-            "location": "San Francisco, CA",
-            "salary": 120000
-        }
-        return jsonify(job)
+@app.route("/job_batch/", methods=["GET"])
+def  get_job_batch():
+    print("in job batch!")
+    filter = request.args.get('filter')
+    print(filter)
+    jobs = filterJob("all")
+    results = [obj.to_dict() for obj in jobs]
+    jsdata = json.dumps({"results": results})
+    # jobj = {'data' : jobs}
+    # entries=json.dumps(jobj)
+    print(len(jobs))
+    
+    return jsdata
 
 
 
@@ -66,6 +60,12 @@ def get_job(filter):
 
 
 if __name__ == "__main__":
-    parseData()
-    #app.run(debug=True)
+    #parseData()
+    #jobs =filterJob("finance")
+
+   
+
+
+
+    app.run(debug=True)
     
