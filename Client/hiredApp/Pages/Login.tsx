@@ -8,6 +8,7 @@ export default function LoginPage({ navigation }: { navigation: any }) {
   const handleSubmit = () => {
     // Handle login form submit
     navigation.navigate('Home')
+
   }
 
   return (
