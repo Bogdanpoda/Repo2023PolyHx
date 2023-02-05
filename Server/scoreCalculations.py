@@ -7,8 +7,9 @@ from fieldMatchingFactors import *
 
 
 def calculateUserMatchScore(user: User, job: Job):
-    score = 0
-    return score
+    user_match_score = calculateUserWorkExperienceScore(user, job) + calculateUserEducationScore(user, job) \
+        + calculateUserLocationScore(user, job)
+    return user_match_score
 
 
 def calculateFieldMatchScore(experience, job: Job):
@@ -44,12 +45,26 @@ def calculateFieldMatchScore(experience, job: Job):
 
 
 def calculateUserWorkExperienceScore(user: User, job: Job):
-    pass
+    work_experience_score = 0
+    for experience in user.workExperience:
+        work_experience_score += user.workExperience.duration * (calculateFieldMatchScore(experience, job) * 5)
+    return work_experience_score
 
 
 def calculateUserEducationScore(user: User, job: Job):
-    score = 0
-    return score
+    education_score = calculateFieldMatchScore(user.education.field, job) * user.education.GPA * 5
+    return education_score
+
+
+def calculateUserLocationScore(user: User, job: Job):
+    if user.ContactInfo.city == job.city:
+        return 10
+    elif user.ContactInfo.state == job.state:
+        return 5
+    elif user.ContactInfo.country == job.country:
+        return 2
+    else:
+        return 0
 
 
 def calculateEmployerMatchScore(employer: Employer, user: User):
